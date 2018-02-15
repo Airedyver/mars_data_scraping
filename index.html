@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars Info</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+
+    <!-- Mars Data -->
+    <div class="row" id="mars-info">
+      <div class="col-md-6">
+        <h2> Latest News About Mars </h2>
+          <h3 class="heading">{{scrape_dict.news_title}} </h3>
+           <p> {{scrape_dict.news_p}}</p>
+            </div>
+            <div class="col-md-6">
+            <h2> Latest Weather on Mars </h2>
+            <h3 class="heading">{{scrape_dict.mars_weather}} </h3>
+            <img src= "{{scrape_dict.featured_image_url}}">
+       </div>
+     </div>
+     <div class="container text-center">
+    <div class="col-md-12">
+    <h1 class="jumbotron">Mars Hemispheres</h1>
+    <div class="row" >
+      <div class="col-sm-6 xtrapad">
+        <img src="{{ scrape_dict.hemisphere_image_urls[0]}}" alt = "Hemisphere 1">
+      </div>
+      <div class="col-sm-6 xtrapad">
+        <img src="{{ scrape_dict.hemisphere_image_urls[1]}}" alt = "Hemisphere 2">
+      </div>
+      <div class="col-sm-6 xtrapad">
+        <img src="{{ scrape_dict.hemisphere_image_urls[2]}}" alt = "Hemisphere 3">
+      </div>
+      <div class="col-sm-6 xtrapad">
+        <img src="{{ scrape_dict.hemisphere_image_urls[3]}}" alt = "Hemisphere 4">
+      </div>
+      </div> 
+<div class="col-md-12">           
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: center;">
+      <th>Facts</th>
+      <th>Factoids</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Equatorial Diameter:</th>
+      <td>6,792 km</td>
+    </tr>
+    <tr>
+      <th>Polar Diameter:</th>
+      <td>6,752 km</td>
+    </tr>
+    <tr>
+      <th>Mass:</th>
+      <td>6.42 x 10^23 kg (10.7% Earth)</td>
+    </tr>
+    <tr>
+      <th>Moons:</th>
+      <td>2 (Phobos &amp; Deimos)</td>
+    </tr>
+    <tr>
+      <th>Orbit Distance:</th>
+      <td>227,943,824 km (1.52 AU)</td>
+    </tr>
+    <tr>
+      <th>Orbit Period:</th>
+      <td>687 days (1.9 years)</td>
+    </tr>
+    <tr>
+      <th>Surface Temperature:</th>
+      <td>-153 to 20 °C</td>
+    </tr>
+    <tr>
+      <th>First Record:</th>
+      <td>2nd millennium BC</td>
+    </tr>
+    <tr>
+      <th>Recorded By:</th>
+      <td>Egyptian astronomers</td>
+    </tr>
+  </tbody>
+</table>
+        <small>{{scrape_dict.hood}}</small>
+      </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
+
